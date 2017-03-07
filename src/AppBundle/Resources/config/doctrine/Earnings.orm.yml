@@ -1,0 +1,20 @@
+AppBundle\Entity\Earnings:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\EarningsRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        label:
+            type: string
+            length: 255
+        amount:
+            type: integer
+        isFixed:
+            type: boolean
+            column: is_fixed
+    lifecycleCallbacks: {  }
