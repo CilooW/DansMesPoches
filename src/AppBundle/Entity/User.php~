@@ -167,52 +167,5 @@ class User
     {
         return $this->email;
     }
-
-    /**
-     * @var \Doctrine\Common\Collections\Collection
-     */
-    private $entries;
-
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->entries = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add entry
-     *
-     * @param \AppBundle\Entity\Entry $entry
-     *
-     * @return User
-     */
-    public function addEntry(\AppBundle\Entity\Entry $entry)
-    {
-        $this->entries[] = $entry;
-
-        return $this;
-    }
-
-    /**
-     * Remove entry
-     *
-     * @param \AppBundle\Entity\Entry $entry
-     */
-    public function removeEntry(\AppBundle\Entity\Entry $entry)
-    {
-        $this->entries->removeElement($entry);
-    }
-
-    /**
-     * Get entries
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getEntries()
-    {
-        return $this->entries;
-    }
-
 }
+

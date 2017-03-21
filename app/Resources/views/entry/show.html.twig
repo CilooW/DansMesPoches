@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Entry</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entry.id }}</td>
+            </tr>
+            <tr>
+                <th>Label</th>
+                <td>{{ entry.label }}</td>
+            </tr>
+            <tr>
+                <th>Amount</th>
+                <td>{{ entry.amount }}</td>
+            </tr>
+            <tr>
+                <th>Isfixed</th>
+                <td>{% if entry.isFixed %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Isspending</th>
+                <td>{% if entry.isSpending %}Yes{% else %}No{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('entry_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('entry_edit', { 'id': entry.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

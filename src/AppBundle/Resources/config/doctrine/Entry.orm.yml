@@ -1,0 +1,33 @@
+AppBundle\Entity\Entry:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\EntryRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        label:
+            type: string
+            length: 255
+            unique: false
+        amount:
+            type: integer
+        isFixed:
+            type: boolean
+            column: is_fixed
+        isSpending:
+            type: boolean
+            column: is_spending
+
+            #ajouter relation manyToOne (many Entry to one user) ou manToMany (many Entry to many user?)
+    manyToOne:
+        user:
+            targetEntity: User
+            inversedBy: entries
+            joinColumn:
+                name: user_id
+                referencedColumnName: id
+    lifecycleCallbacks: {  }

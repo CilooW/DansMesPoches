@@ -3,9 +3,9 @@
 namespace AppBundle\Entity;
 
 /**
- * Spending
+ * Entry
  */
-class Spending
+class Entry
 {
     /**
      * @var int
@@ -27,6 +27,11 @@ class Spending
      */
     private $isFixed;
 
+    /**
+     * @var bool
+     */
+    private $isSpending;
+
 
     /**
      * Get id
@@ -43,7 +48,7 @@ class Spending
      *
      * @param string $label
      *
-     * @return Spending
+     * @return Entry
      */
     public function setLabel($label)
     {
@@ -67,7 +72,7 @@ class Spending
      *
      * @param string $amount
      *
-     * @return Spending
+     * @return Entry
      */
     public function setAmount($amount)
     {
@@ -91,7 +96,7 @@ class Spending
      *
      * @param boolean $isFixed
      *
-     * @return Spending
+     * @return Entry
      */
     public function setIsFixed($isFixed)
     {
@@ -105,9 +110,81 @@ class Spending
      *
      * @return bool
      */
+    public function isFixed()
+    {
+        return $this->isFixed;
+    }
+
+    /**
+     * Set isEntry
+     *
+     * @param boolean $isEntry
+     *
+     * @return Entry
+     */
+    public function setIsSpending($isSpending)
+    {
+        $this->isFixed = $isSpending;
+
+        return $this;
+    }
+
+    /**
+     * Get isFixed
+     *
+     * @return bool
+     */
+    public function isSpending()
+    {
+        return $this->isSpending;
+    }
+    /**
+     * @var \AppBundle\Entity\User
+     */
+    private $user;
+
+
+    /**
+     * Get isFixed
+     *
+     * @return boolean
+     */
     public function getIsFixed()
     {
         return $this->isFixed;
     }
-}
 
+    /**
+     * Get isSpending
+     *
+     * @return boolean
+     */
+    public function getIsSpending()
+    {
+        return $this->isSpending;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \AppBundle\Entity\User $user
+     *
+     * @return Entry
+     */
+    public function setUser(\AppBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \AppBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+}

@@ -3,9 +3,9 @@
 namespace AppBundle\Entity;
 
 /**
- * Earnings
+ * Entry
  */
-class Earnings
+class Entry
 {
     /**
      * @var int
@@ -18,7 +18,7 @@ class Earnings
     private $label;
 
     /**
-     * @var int
+     * @var string
      */
     private $amount;
 
@@ -26,6 +26,11 @@ class Earnings
      * @var bool
      */
     private $isFixed;
+
+    /**
+     * @var bool
+     */
+    private $isSpending;
 
 
     /**
@@ -43,7 +48,7 @@ class Earnings
      *
      * @param string $label
      *
-     * @return Earnings
+     * @return Entry
      */
     public function setLabel($label)
     {
@@ -65,9 +70,9 @@ class Earnings
     /**
      * Set amount
      *
-     * @param integer $amount
+     * @param string $amount
      *
-     * @return Earnings
+     * @return Entry
      */
     public function setAmount($amount)
     {
@@ -79,7 +84,7 @@ class Earnings
     /**
      * Get amount
      *
-     * @return int
+     * @return string
      */
     public function getAmount()
     {
@@ -91,7 +96,7 @@ class Earnings
      *
      * @param boolean $isFixed
      *
-     * @return Earnings
+     * @return Entry
      */
     public function setIsFixed($isFixed)
     {
@@ -105,9 +110,33 @@ class Earnings
      *
      * @return bool
      */
-    public function getIsFixed()
+    public function isFixed()
     {
         return $this->isFixed;
+    }
+
+    /**
+     * Set isEntry
+     *
+     * @param boolean $isEntry
+     *
+     * @return Entry
+     */
+    public function setIsSpending($isSpending)
+    {
+        $this->isFixed = $isSpending;
+
+        return $this;
+    }
+
+    /**
+     * Get isFixed
+     *
+     * @return bool
+     */
+    public function isSpending()
+    {
+        return $this->isSpending;
     }
 }
 
